@@ -6,6 +6,12 @@ import router from './router'
 
 import './index.css'
 
+import { worker } from './mocks/browser'
+
+if (process.env.NODE_ENV === 'development') {
+    worker.start()
+}
+
 const app = createApp(App)
 
 app.use(createPinia())
