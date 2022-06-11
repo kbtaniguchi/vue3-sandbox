@@ -1,10 +1,10 @@
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 
-import App from './App.vue'
-import router from './router'
+import App from '@/App.vue'
+import router from '@/router'
 
-import './index.css'
+import '@/assets/tailwind.css'
 
 import { worker } from './mocks/browser'
 
