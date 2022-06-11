@@ -1,3 +1,10 @@
 {
-  "recommendations": ["Vue.volar", "Vue.vscode-typescript-vue-plugin"]
+  "recommendations": [
+    "Vue.volar", 
+    "Vue.vscode-typescript-vue-plugin",
+    "eg2.vscode-npm-script",
+    "dbaeumer.vscode-eslint",
+    "bradlc.vscode-tailwindcss",
+    "hediet.vscode-drawio"
+  ]
 }
