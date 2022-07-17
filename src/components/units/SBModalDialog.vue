@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import SBStack from '@/components/layouts/SBStack.vue'
 import SBCenter from '@/components/layouts/SBCenter.vue'
-import SBBox from '@/components/layouts/SBBox.vue'
 import SBImposter from '@/components/layouts/SBImposter.vue'
 import SBButton from '@/components/parts/SBButton.vue'
 
@@ -15,9 +14,11 @@ import {
 withDefaults(
   defineProps<{
     isVisible: boolean
+    large?: boolean
   }>(),
   {
     isVisible: false,
+    large: false,
   }
 )
 
@@ -32,21 +33,27 @@ const fireCloseEvent = () => {
 
 <template>
   <Dialog :open="isVisible" @close="fireCloseEvent">
-    <SBImposter fixed class="shadow">
-      <DialogPanel class="rounded">
-        <SBStack class="">
-          <DialogTitle>
+    <div class="fixed inset-0 bg-black/30" aria-hidden="true" />
+    <SBImposter
+      fixed
+      class="rounded bg-white p-2 shadow"
+      :class="large ? 'w-full' : ''"
+    >
+      <DialogPanel>
+        <SBStack>
+          <DialogTitle class="font-bold">
             <slot name="title" />
           </DialogTitle>
-          <DialogDescription v-if="$slots.description">
+          <DialogDescription
+            class="text-sm text-gray-700"
+            v-if="$slots.description"
+          >
             <slot name="description" />
           </DialogDescription>
           <slot name="content" />
           <slot name="control">
             <SBCenter>
-              <SBBox>
-                <SBButton @click="fireCloseEvent">OK</SBButton>
-              </SBBox>
+              <SBButton @click="fireCloseEvent">OK</SBButton>
             </SBCenter>
           </slot>
         </SBStack>

@@ -2,13 +2,9 @@
 withDefaults(
   defineProps<{
     padding?: 'none' | 'small' | 'medium' | 'large'
-    breakWords?: boolean
-    overflow?: boolean
   }>(),
   {
     padding: 'medium',
-    breakWords: false,
-    overflow: false,
   }
 )
 </script>
@@ -22,8 +18,6 @@ withDefaults(
         medium: 'p-2',
         large: 'p-3',
       }[padding],
-      breakWords ? 'break-words' : '',
-      overflow ? 'max-h-[60vh] overflow-auto' : '',
     ]"
   >
     <slot />

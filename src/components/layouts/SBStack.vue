@@ -23,7 +23,6 @@ withDefaults(
   >
     <slot />
     <div v-if="$slots.bottom" style="margin-top: auto">
-      <!--  note: class="mt-auto"だと詳細度がspace-y-*に負けて上書けない -->
       <slot name="bottom" />
     </div>
   </div>

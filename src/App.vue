@@ -5,6 +5,7 @@ import SBCluster from '@/components/layouts/SBCluster.vue'
 import SBCenter from '@/components/layouts/SBCenter.vue'
 import SBDialog from '@/components/units/SBModalDialog.vue'
 import { ref } from 'vue'
+import SBBox from '@/components/layouts/SBBox.vue'
 
 const test = () => {
   console.log('hi! test!!!')
@@ -31,15 +32,64 @@ const closeDialog = () => {
       <SBButton mood="weakNegative" @click="test">削除</SBButton>
       <SBButton mood="negative" @click="test">削除</SBButton>
     </SBCluster>
+    <SBBox class="relative">
+      <SBDialog :is-visible="visible" large @close="closeDialog">
+        <template #title>テストダイアログ</template>
+        <template #description>これはテストのダイアログです</template>
+        <template #content>
+          <SBBox class="max-h-[60vh] overflow-auto">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum.
+            テストテストテストテストテストテストテストテストテストテストテストテストテストテストテスト
+            テストテストテストテストテストテストテストテストテストテストテストテストテストテストテスト
+            テストテストテストテストテストテストテストテストテストテストテストテストテストテストテスト
+            テストテストテストテストテストテストテストテストテストテストテストテストテストテストテスト
+            テストテストテストテストテストテストテストテストテストテストテストテストテストテストテスト
+            テストテストテストテストテストテストテストテストテストテストテストテストテストテストテスト
+            テストテストテストテストテストテストテストテストテストテストテストテストテストテストテスト
+            テストテストテストテストテストテストテストテストテストテストテストテストテストテストテスト
+            テストテストテストテストテストテストテストテストテストテストテストテストテストテストテスト
+            テストテストテストテストテストテストテストテストテストテストテストテストテストテストテスト
+            テストテストテストテストテストテストテストテストテストテストテストテストテストテストテスト
+            テストテストテストテストテストテストテストテストテストテストテストテストテストテストテスト
+            テストテストテストテストテストテストテストテストテストテストテストテストテストテストテスト
+            テストテストテストテストテストテストテストテストテストテストテストテストテストテストテスト
+            テストテストテストテストテストテストテストテストテストテストテストテストテストテストテスト
+            テストテストテストテストテストテストテストテストテストテストテストテストテストテストテスト
+            テストテストテストテストテストテストテストテストテストテストテストテストテストテストテスト
+            テストテストテストテストテストテストテストテストテストテストテストテストテストテストテスト
+            テストテストテストテストテストテストテストテストテストテストテストテストテストテストテスト
+            テストテストテストテストテストテストテストテストテストテストテストテストテストテストテスト
+            テストテストテストテストテストテストテストテストテストテストテストテストテストテストテスト
+            テストテストテストテストテストテストテストテストテストテストテストテストテストテストテスト
+            テストテストテストテストテストテストテストテストテストテストテストテストテストテストテスト
+            テストテストテストテストテストテストテストテストテストテストテストテストテストテストテスト
+            テストテストテストテストテストテストテストテストテストテストテストテストテストテストテスト
+            テストテストテストテストテストテストテストテストテストテストテストテストテストテストテスト
+            テストテストテストテストテストテストテストテストテストテストテストテストテストテストテスト
+            テストテストテストテストテストテストテストテストテストテストテストテストテストテストテスト
+            テストテストテストテストテストテストテストテストテストテストテストテストテストテストテスト
+            テストテストテストテストテストテストテストテストテストテストテストテストテストテストテスト
+            テストテストテストテストテストテストテストテストテストテストテストテストテストテストテスト
+            テストテストテストテストテストテストテストテストテストテストテストテストテストテストテスト
+            テストテストテストテストテストテストテストテストテストテストテストテストテストテストテスト
+            テストテストテストテストテストテストテストテストテストテストテストテストテストテストテスト
+            テストテストテストテストテストテストテストテストテストテストテストテストテストテストテスト
+            テストテストテストテストテストテストテストテストテストテストテストテストテストテストテスト
+            テストテストテストテストテストテストテストテストテストテストテストテストテストテストテスト
+          </SBBox>
+        </template>
+      </SBDialog>
+    </SBBox>
     <template #bottom>
       <SBCenter and-text>
         <p>test bottom</p>
       </SBCenter>
     </template>
-    <SBDialog :is-visible="visible" @close="closeDialog">
-      <template #title>title</template>
-      <template #description>description</template>
-      <template #content>content</template>
-    </SBDialog>
   </SBStack>
 </template>

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 withDefaults(
   defineProps<{
-    andText: boolean
+    andText?: boolean
   }>(),
   {
     andText: false,
