@@ -14,11 +14,15 @@ import {
 withDefaults(
   defineProps<{
     isVisible: boolean
-    large?: boolean
+    title: string
+    wide?: boolean
+    description?: string
   }>(),
   {
     isVisible: false,
-    large: false,
+    title: '',
+    wide: false,
+    description: '',
   }
 )
 
@@ -33,20 +37,17 @@ const emit = defineEmits<{
     <SBImposter
       fixed
       class="rounded bg-white p-2 shadow"
-      :class="large ? 'w-full' : ''"
+      :class="wide ? 'w-full' : ''"
     >
       <DialogPanel>
         <SBStack>
           <DialogTitle class="font-bold">
-            <slot name="title" />
+            {{ title }}
           </DialogTitle>
-          <DialogDescription
-            class="text-sm text-gray-700"
-            v-if="$slots.description"
-          >
-            <slot name="description" />
+          <DialogDescription v-if="description" class="text-sm text-gray-700">
+            {{ description }}
           </DialogDescription>
-          <slot name="content" />
+          <slot />
           <slot name="control">
             <SBCenter>
               <SBButton @click="emit('close')">OK</SBButton>
