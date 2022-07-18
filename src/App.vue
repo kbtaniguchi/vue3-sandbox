@@ -1,13 +1,15 @@
 <script setup lang="ts">
+import { ref } from 'vue'
+
 import SBButton from '@/components/parts/SBButton.vue'
 import SBStack from '@/components/layouts/SBStack.vue'
 import SBCluster from '@/components/layouts/SBCluster.vue'
 import SBCenter from '@/components/layouts/SBCenter.vue'
 import SBDialog from '@/components/units/SBModalDialog.vue'
-import { ref } from 'vue'
 import SBBox from '@/components/layouts/SBBox.vue'
 import SBInputText from '@/components/parts/SBInputText.vue'
 import SBField from '@/components/units/SBField.vue'
+import SBSidebar from '@/components/layouts/SBSidebar.vue'
 
 const test = () => {
   console.log('hi! test!!!')
@@ -49,6 +51,12 @@ const inputValue = ref('')
       </SBField>
       <SBField label="TEST">
         <SBInputText v-model="inputValue" disabled />
+      </SBField>
+      <SBField label="TEST">
+        <SBSidebar side="right">
+          <SBInputText v-model="inputValue" invalid />
+          <SBButton>Test</SBButton>
+        </SBSidebar>
       </SBField>
     </SBCluster>
     <template #bottom>

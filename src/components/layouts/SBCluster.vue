@@ -32,11 +32,11 @@ withDefaults(
         evenly: 'justify-evenly',
       }[justify],
       {
-        start: 'item-start',
-        end: 'item-end',
-        center: 'item-center',
-        baseline: 'item-baseline',
-        stretch: 'item-stretch',
+        start: 'items-start',
+        end: 'items-end',
+        center: 'items-center',
+        baseline: 'items-baseline',
+        stretch: 'items-stretch',
       }[align],
     ]"
   >
