@@ -25,14 +25,10 @@ withDefaults(
 const emit = defineEmits<{
   (e: 'close'): void
 }>()
-
-const fireCloseEvent = () => {
-  emit('close')
-}
 </script>
 
 <template>
-  <Dialog :open="isVisible" @close="fireCloseEvent">
+  <Dialog :open="isVisible" @close="emit('close')">
     <div class="fixed inset-0 bg-black/30" aria-hidden="true" />
     <SBImposter
       fixed
@@ -53,7 +49,7 @@ const fireCloseEvent = () => {
           <slot name="content" />
           <slot name="control">
             <SBCenter>
-              <SBButton @click="fireCloseEvent">OK</SBButton>
+              <SBButton @click="emit('close')">OK</SBButton>
             </SBCenter>
           </slot>
         </SBStack>
