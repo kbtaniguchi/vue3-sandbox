@@ -7,6 +7,7 @@ import SBDialog from '@/components/units/SBModalDialog.vue'
 import { ref } from 'vue'
 import SBBox from '@/components/layouts/SBBox.vue'
 import SBInputText from '@/components/parts/SBInputText.vue'
+import SBField from '@/components/units/SBField.vue'
 
 const test = () => {
   console.log('hi! test!!!')
@@ -42,11 +43,14 @@ const inputValue = ref('')
       <SBButton disabled mood="weakNegative" @click="test">削除</SBButton>
       <SBButton disabled mood="negative" @click="test">削除</SBButton>
     </SBCluster>
-    <SBBox>
-      <SBInputText v-model="inputValue" />
-      <SBInputText disabled v-model="inputValue" />
-      <p>{{ inputValue }}</p>
-    </SBBox>
+    <SBCluster>
+      <SBField label="TEST" hint="test test test">
+        <SBInputText v-model="inputValue" invalid />
+      </SBField>
+      <SBField label="TEST">
+        <SBInputText v-model="inputValue" />
+      </SBField>
+    </SBCluster>
     <template #bottom>
       <SBCenter and-text>
         <p>test bottom</p>
