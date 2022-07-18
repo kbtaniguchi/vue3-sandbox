@@ -54,7 +54,7 @@ const inputValue = ref('')
       </SBField>
       <SBField label="TEST">
         <SBSidebar side="right">
-          <SBInputText v-model="inputValue" invalid />
+          <SBInputText v-model="inputValue" />
           <SBButton>Test</SBButton>
         </SBSidebar>
       </SBField>
