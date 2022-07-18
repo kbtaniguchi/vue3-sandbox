@@ -31,5 +31,3 @@ const emit = defineEmits<{
     @input="emit('update:modelValue', $event.target.value)"
   />
 </template>
-
-<style module></style>
